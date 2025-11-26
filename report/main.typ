@@ -3,8 +3,8 @@
 
 #show: clean-math-presentation-theme.with(
   config-info(
-    title: [Object-oriented and softw. design - C++ \
-    Lab worksheet \#5],
+    title: [Object-oriented and softw. design - C++],
+    subtitle: [Lab worksheet \#5 - Report],
     short-title: [Lab worksheet \#5],
     authors: (
       (name: "Hacini Malik"),
@@ -25,11 +25,34 @@
   logo1: image("bank_pict.jpg", height: 10em)
 )
 
+#let nb(body) = box(
+  fill: luma(240),
+  inset: 8pt,
+  radius: 4pt,
+  stroke: 0.5pt + gray,
+)[
+  *N.B.* — #body
+]
 
 // == Outline <touying:hidden>
 
 // #components.adaptive-columns(outline(title: none))
 
+#slide[]
+
+*Contributions*:
+- Exercise 1: Martin
+- Exercise 2: Martin & Timothée
+- Exercise 3: Timothée
+
+#nb[Doxygen documentation for the lab can be generated with the following commands: 
+- `sudo apt update` (if necessary)
+- `sudo apt install -y doxygen graphviz` (if necessary)
+- `make docs `
+- `xdg-open docs/html/index.html`
+]
+
+= Exercise 1
 
 #slide(title: "Polymorphism")[
   == 1. Why is polymorphism useful?
@@ -59,6 +82,8 @@
   - Use `override` for `debit`/`print` and provide concrete implementations.
 ]
 
+= Exercise 2
+
 #slide(title: "Client update")[
   == 1. Dynamic Data Structure
 
@@ -76,6 +101,8 @@ Since we use raw pointers with dynamic allocation (`new`), manual memory managem
 
 The `createAccount` method introduces runtime decision-making. It uses user input (`cin`) to instantiate the specific subclass (`new Blocked_account`, etc.) requested by the user and stores it in the polymorphic array.
 ]
+
+= Exercise 3
 
 #slide(title: "Polynomials - 1")[
   We define a new abstract class `Function` representing a mathematical function. This class provides pure virtual methods for evaluating the function at a given point, computing its derivative, and displaying the informations about the function.
